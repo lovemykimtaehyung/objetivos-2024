@@ -3,15 +3,54 @@
 
 :root{
 --cor-de-fundo: #1E1E1E;
-¨texto1: rgb(243, 172, 243);
-¨texto2: #FFFFFF;
-¨botao-ativo: #3a375e;
-¨botao-inativo:rgba(58,55,94,0.5);
-¨texto-fundo::rgba(58,55,94,0.3);
+--texto1: rgb(252, 249, 252);
+--texto2: #FFFFFF;
+--botao-ativo:rgb(216, 136, 248);
+--botao-inativo:rgba(215, 94, 255, 0.651);
+--texto-fundo::rgba(58,55,94,0.3);
 }
 
 body{
-    background-color: var(#1E1E1E) ;
-    color:var: rgb(243, 172, 243) ;,
-    font-family:"Spirax" ,system-ui;
+    background-color: var(--cor-de-fundo);
+    color: var(--texto1);
+    font-family:"Dancing Script", cursive;
+}
+
+.conteudo-principal{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.titulo-principal{
+    text-align: center;
+    width: 100%;
+    font-size: 75px;
+}
+.botao{
+    font-family: "Dancing Script", cursive;
+    background-color: var(--botao-inativo);
+    display: flex;
+    color:#ede3f0 (--texto 1);
+    justify-content: center;
+    padding: 1 em;
+    font-size: 50px;
+    align-items: center;
+    width: 100%;
+}
+.botoes{
+
+    display:flex;
+}
+.botao:first-child{
+    border-radius:40px 0 0 40px;
+}
+.botao:last-child{
+    border-radius: 0 40px 40px 0;
+}
+.ativo{
+    background: var(--botao-ativo);
+    color:#f3f3f3;
 }
