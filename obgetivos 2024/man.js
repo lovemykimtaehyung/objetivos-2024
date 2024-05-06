@@ -1,8 +1,9 @@
 const botoes = document.querySelectorAll(".botao");
 const textoss = document.querySelectorAll(".aba-conteudo");
 const contadores = document.querySelectorAll(".contador");
-const tempoObjetivo1=new Date("2024-08-06-T00:00:00");
+const tempoObjetivo1=new Date("2025-08-06-T00:00:00");
 const tempoAtual=new Date;
+const tempoObjetivo2= new Date("2025-08-06-T00:00:00");
 //Declara quais elementos vão ser lidos. O script vai ler todos que tiverem a classe "botao".
 
 for(let i=0;i <botoes.length;i++){
@@ -16,4 +17,19 @@ for(let i=0;i <botoes.length;i++){
         //Adiciona a classe ativo só no botão clicado.
     }
 }
-contadores[0].textContent= tempoObjetivo1-tempoAtual;
+contadores[0].textContent= calculaTempo(tempoObjetivo1);
+
+function calculaTempo(tempoObjetivo){
+    let tempoAtual=new Date();
+    let tempoFinal=tempoObjetivo-tempoAtual;
+    let segundos= Math.floor(tempoFinal/1000);
+    let minutos= Math.floor(segundos/60);
+    let horas= Math.floor(minutos/60);
+    let dias= Math.floor(horas/24);
+
+    segundos%=60;
+    minutos%=60;
+    horas%=24;
+
+    return dias+"dias"+horas+"horas"+minutos+"minutos"+segundos+"segundos";
+}
